@@ -3,13 +3,11 @@
         :class="['basic-tab',isShow?'border-white':'border-gray-100']"
         @clickOutSide="clickOutSide">
         <div :class="['title gap-x-1',isShow?'bg-white':'']">
-            <VIcon v-if="icon" name="AcUnitOutlined" size="20" class="p-0"/>
             <slot>
                 <label>{{ label }}</label>
             </slot>
             <span v-if="child&&child.length>0" @click.stop="clickTabDown">
                 <slot name="icon">
-                    <VIcon :is-bg="false" class="p-0" name="ArrowDropDownRound"/>
                 </slot>
             </span>
         </div>
@@ -18,7 +16,6 @@
                 <div
                     class="hover:bg-black hover:bg-opacity-5 py-2 px-3 flex items-center gap-x-1"
                     v-for="tab in child">
-                    <VIcon name="AcUnitOutlined" size="20" class="p-0"/>
                     <label>
                         {{ tab.label }}
                     </label>
@@ -30,7 +27,6 @@
 
 <script setup lang="ts">
 
-import VIcon from "../../components/Icon/VIcon.vue";
 import ClickOutSide from "../../components/ClickOutSide/src/ClickOutSide.vue";
 import {nextTick, ref, unref} from "vue";
 

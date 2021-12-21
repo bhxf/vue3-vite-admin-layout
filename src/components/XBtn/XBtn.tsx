@@ -2,8 +2,12 @@ import {defineComponent} from "vue";
 
 export default defineComponent({
   name:'',
-  setup(){
+  emits:[],
+  props: {},
+  components:{},
+  setup(_){
     return ()=>
-      
+      <>
+      </>
   }
 })

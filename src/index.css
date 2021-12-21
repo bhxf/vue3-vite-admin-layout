@@ -4,12 +4,15 @@
 
 @layer base {
     .g-bg{
-        @apply bg-gray-100
+        @apply bg-gray-100;
     }
     .g-primary{
-        @apply bg-blue-600
+        @apply bg-blue-600;
     }
     .g-hover{
-        @apply hover:bg-black hover:bg-opacity-10
+        @apply hover:bg-black hover:bg-opacity-10;
+    }
+    .g-active{
+        @apply bg-black bg-opacity-20;
     }
 }

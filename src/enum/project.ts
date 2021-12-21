@@ -7,8 +7,8 @@ export enum LayoutModel {
 export enum LayoutProp{
   TOP_HEIGHT= 48,
   TABS_HEIGHT= 30,
-  LEFT_WIDTH= 250,
+  LEFT_WIDTH= 200,
   RIGHT_WIDTH= 320,
-  MIN_LEFT_WIDTH= 50,
+  MIN_LEFT_WIDTH= 120,
   MIN_LEFT_DRAWER_WIDTH= 200,
 }

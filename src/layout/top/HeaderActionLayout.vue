@@ -17,16 +17,12 @@
             </div>
         </div>
         <div class="flex gap-4 pr-4 items-center">
-            <VIcon name="NotificationsNoneOutlined"/>
-            <VIcon name="SettingsOutlined"/>
-            <VIcon name="SupervisedUserCircleOutlined"/>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import {computed, inject, unref} from "vue";
-import VIcon from "../../components/Icon/VIcon.vue";
 import BasicSelect from "../../components/Select/BasicSelect.vue";
 
 const headerActionLayoutHeight = inject('headerActionLayoutHeight')

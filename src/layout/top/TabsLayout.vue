@@ -1,8 +1,6 @@
 <template>
     <div class="tabs-layout">
 
-        <VIcon name="AppsFilled"/>
-
         <div ref="tabsRef" class="flex-1 flex overflow-hidden relative pl-2">
             <template v-for="tab in tabs" :key="tab.path">
                 <TabLayout
@@ -19,8 +17,6 @@
         <TabLayout v-if="isMore" label="更多" :child="moreTabs"/>
 
         <div class="flex gap-x-1">
-            <VIcon @click.stop="addTab" name="AddCircleOutlineRound"/>
-            <VIcon name="AutorenewOutlined"/>
         </div>
 
     </div>
@@ -30,7 +26,6 @@
 import {computed, inject, nextTick, ref, unref, watch} from "vue";
 import tabStore from "../../store/layout/tabStore";
 import {Tab} from "../../store/layout/type";
-import VIcon from "../../components/Icon/VIcon.vue";
 import TabLayout from "./TabLayout.vue";
 import {cloneDeep} from "lodash-es";
 

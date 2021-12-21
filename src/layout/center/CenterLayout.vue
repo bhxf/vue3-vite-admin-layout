@@ -1,8 +1,7 @@
 <template>
   <div class="center-layout">
-    <div class="h-full p-3">
-      <div class="h-full bg-white shadow rounded overflow-auto flex flex-wrap justify-between gap-4 p-3">
-        <div v-for="i in 100" class="bg-indigo-600 bg-opacity-80 shadow-lg rounded-md w-28 h-28"></div>
+    <div class="h-full p-5">
+      <div class="h-full bg-white rounded-md overflow-auto flex flex-wrap justify-between gap-4 p-3">
       </div>
     </div>
   </div>
@@ -10,6 +9,7 @@
 
 <script setup lang="ts">
 import {computed, inject, unref} from "vue";
+import XIcon from "../../components/XIcon/XIcon";
 
 const topHeight = inject<number>('topHeight')||0
 const tabsHeight = inject<number>('tabsHeight')||0
@@ -33,6 +33,6 @@ const left = computed(()=>{
   width: 100%;
   height: 100vh;
   z-index: 0;
-  @apply bg-gray-200;
+  @apply bg-slate-100;
 }
 </style>

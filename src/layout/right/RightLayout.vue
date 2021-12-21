@@ -1,27 +1,27 @@
 <template>
-  <click-out-side v-if="isRight" class="right-layout flex flex-col" @clickOutSide="isRight = false">
-    <div class="flex w-full p-3 border-b-2 border-gray-100 bg-white">
-      <div class="flex-1 text-lg font-medium">项目设置</div>
-      <VIcon @click="isRight = false" name="X"/>
+  <click-out-side v-if="isRight" class="right-layout flex flex-col shadow-md" @clickOutSide="isRight = false">
+    <div class="flex items-center w-full pl-6 pt-2 pb-2 bg-slate-600">
+      <div class="flex-1 text-md font-medium text-white">项目设置</div>
+      <XIcon @click="isRight = false" size="20px" name="md:CloseRound" color="white"/>
     </div>
-    <div class="p-3 h-36 overflow-auto flex flex-row w-full gap-x-4 bg-gray-50">
-      <div :class="['item',layoutModel === LayoutModel.DRAWER?'active-item':'border-gray-50']" @click="selectedLayoutModel(LayoutModel.DRAWER)">
-        <div class="h-7 bg-gray-800 rounded-t-md"></div>
+    <div class="p-3 flex flex-col w-full gap-y-2 items-center">
+      <div :class="['item',layoutModel === LayoutModel.DRAWER?'active-item':'border-white']" @click="selectedLayoutModel(LayoutModel.DRAWER)">
+        <div class="h-5 bg-gray-600 rounded-t-md"></div>
         <div class="flex-1 flex">
-          <div class="w-10 bg-white rounded-l-md h-full"></div>
+          <div class="w-10 bg-gray-500 rounded-bl-md h-full"></div>
           <div class="flex-1 h-full"></div>
         </div>
       </div>
-      <div :class="['item',layoutModel === LayoutModel.NO_DRAWER?'active-item':'border-gray-50']" @click="selectedLayoutModel(LayoutModel.NO_DRAWER)">
-        <div class="h-7 bg-gray-800 rounded-t-md"></div>
+      <div :class="['item',layoutModel === LayoutModel.NO_DRAWER?'active-item':'border-white']" @click="selectedLayoutModel(LayoutModel.NO_DRAWER)">
+        <div class="h-5 bg-gray-600 rounded-t-md"></div>
         <div class="flex-1 flex">
           <div class="flex-1 h-full"></div>
         </div>
       </div>
-      <div :class="['item',layoutModel === LayoutModel.MIN_DRAWER?'active-item':'border-gray-50']" @click="selectedLayoutModel(LayoutModel.MIN_DRAWER)">
-        <div class="h-7 bg-gray-800 rounded-t-md"></div>
+      <div :class="['item',layoutModel === LayoutModel.MIN_DRAWER?'active-item':'border-white']" @click="selectedLayoutModel(LayoutModel.MIN_DRAWER)">
+        <div class="h-5 bg-gray-600 rounded-t-md"></div>
         <div class="flex-1 flex">
-          <div class="w-6 bg-gray-900 rounded-bl-md h-full"></div>
+          <div class="w-6 bg-gray-500 rounded-bl-md h-full"></div>
           <div class="w-4 bg-white h-full"></div>
           <div class="flex-1 h-full"></div>
         </div>
@@ -33,8 +33,8 @@
 <script setup lang="ts">
 import {computed, inject, unref,Ref} from "vue";
 import ClickOutSide from "../../components/ClickOutSide/src/ClickOutSide.vue";
-import VIcon from "../../components/Icon/VIcon.vue";
 import {LayoutModel} from "../../enum/project";
+import XIcon from "../../components/XIcon/XIcon";
 
 const layoutModel = inject<Ref<LayoutModel>>('layoutModel')
 const rightWidth = inject('rightWidth')
@@ -69,7 +69,7 @@ const selectedLayoutModel = (model:LayoutModel) => {
   }
   .item{
     flex-shrink: 0;
-    @apply w-32 h-28 flex flex-col rounded-xl bg-gray-100 border-4 hover:border-blue-600;
+    @apply w-40 h-28 flex flex-col rounded-xl bg-gray-100 border-4 hover:border-blue-600;
   }
 }
 </style>

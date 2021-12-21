@@ -1,2 +1,4 @@
-.x-icon
-  @apply flex justify-center items-center hover:bg-black hover:bg-opacity-5 rounded-md
+.x-icon{
+  width: fit-content;
+  @apply flex justify-center items-center rounded-lg
+}
